@@ -11,10 +11,15 @@ def add(x: int, y: int) -> int:
     return x + y
 
  #adiciona un recurso de saludo dinamico al recurso
-@mcp.resource("greeting://{name}")
+@mcp.resource("greeting://{name}", name="greeting")
 def get_greeting(name: str) -> str:
     """Devuelve un saludo personalizado."""
     return f"Hola, {name}!"
+
+@mcp.resource("SimpleResource://SimpleResource", name="simpleResource")
+def get_simple_resource() -> str:
+    """Devuelve un mensaje."""
+    return f"Hola, este es un recurso basico estatico que retorna este mensaje!"
 
 #@mcp.prompt("¿Cómo te llamas?")
 
