@@ -78,6 +78,114 @@ pip install -r requirements.txt
 
 ---
 
+## 8. Uso de archivos `.env` en proyectos Python
+
+Los archivos `.env` permiten guardar variables de entorno sensibles (como contraseñas, claves API, configuraciones) fuera del código fuente.
+
+### ¿Cómo crear un archivo `.env`?
+**Comando:**
+```bash
+touch .env
+```
+O simplemente crea un archivo llamado `.env` en la raíz de tu proyecto.
+
+### ¿Cómo escribir variables en `.env`?
+Agrega líneas en el archivo con el formato:
+```
+NOMBRE_VARIABLE=valor
+```
+
+### ¿Cómo cargar variables de `.env` en Python?
+Instala la librería `python-dotenv`:
+```bash
+pip install python-dotenv
+```
+En tu código Python:
+```python
+from dotenv import load_dotenv
+load_dotenv()
+```
+Luego puedes acceder a las variables usando `os.getenv`:
+```python
+import os
+valor = os.getenv("NOMBRE_VARIABLE")
+```
+
+### ¿Para qué sirve?
+- Mantener configuraciones sensibles fuera del código.
+- Facilitar el cambio de configuraciones sin modificar el código fuente.
+- Mejorar la seguridad y portabilidad del proyecto.
+
+### Recomendaciones
+- No subir el archivo `.env` a repositorios públicos (agrega `.env` a tu `.gitignore`).
+- Usa variables descriptivas y documenta su uso.
+
+---
+
+## 9. Comandos básicos para trabajar con MCP (Model Context Protocol)
+
+### ¿Qué es MCP?
+
+MCP (Model Context Protocol) es un estándar abierto y de código abierto para estandarizar la forma en que los sistemas de inteligencia artificial, como los modelos de lenguaje grandes (LLMs), intercambian contexto, instrucciones y resultados. MCP facilita la interoperabilidad entre diferentes modelos, agentes y aplicaciones, permitiendo una integración más sencilla y flexible en sistemas de IA.
+
+### ¿Para qué sirve MCP?
+- Permite que diferentes modelos y agentes de IA se comuniquen usando un formato común.
+- Facilita la integración de LLMs en aplicaciones, flujos de trabajo y sistemas distribuidos.
+- Estandariza el intercambio de contexto, instrucciones y resultados entre componentes de IA.
+
+### Paquetes necesarios para MCP en Python
+
+Para trabajar con MCP en Python, puedes usar el paquete oficial:
+
+- **"mcp[cli]"** (referencia al SDK MCP con el componente de interfaz de línea de comandos (CLI) instalado.)
+- REVISAR **mcp** (protocolo y utilidades MCP)
+- **requests** (opcional, para comunicación HTTP)
+- **python-dotenv** (opcional, para variables de entorno)
+
+**Instalación:**
+```bash
+pip install "mcp[cli]"
+```
+```bash
+pip install mcp requests python-dotenv
+```
+
+### Ejemplo básico de uso de MCP en Python
+
+**Enviar contexto e instrucciones a un modelo MCP:**
+```python
+from mcp import Client
+
+client = Client("http://localhost:8000")
+context = {"user": "Juan", "task": "resumir texto"}
+instructions = "Resume el siguiente texto en español."
+
+response = client.send(context=context, instructions=instructions)
+print("Respuesta del modelo:", response)
+```
+
+### Comandos para ejecución
+**Ejecutar el servidor en modo desarrollo:**
+```bash
+mcp dev server.py
+```
+- este comando en consola muestra una url
+- la url abre e l inspector
+- si no funciona usa el siguiente comando -> npx @modelcontextprotocol/inspector mcp run server-py
+- en la pagina en el momento hay que configurar si no estas usan uv lo siguiente
+    - en command poner mcp
+    - en Arguments poner run server-py
+- listo conectar
+
+
+### Recomendaciones
+
+- Consulta la documentación oficial de MCP: https://github.com/modelcontext/modelcontext
+- Usa variables de entorno para configurar endpoints y claves API.
+- MCP puede usarse con modelos locales o servicios en la nube compatibles.
+
+---
+
 ## Cómo agregar más comandos
 Agrega una nueva sección siguiendo el formato:
 
@@ -92,3 +200,4 @@ comando_aqui
 ---
 
 ¡Usa este archivo como referencia rápida para ahorrar tiempo y recursos!
+
