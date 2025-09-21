@@ -145,14 +145,18 @@ valor = os.getenv("NOMBRE_VARIABLE")
 - Usa variables descriptivas y documenta su uso.
 
 ---
+---
 
-## 9. Comandos básicos para trabajar con MCP (Model Context Protocol)
+<br>
+<br>
 
-### ¿Qué es MCP?
+## 3. Comandos básicos para trabajar con MCP (Model Context Protocol)
+
+### 1. ¿Qué es MCP?
 
 MCP (Model Context Protocol) es un estándar abierto y de código abierto para estandarizar la forma en que los sistemas de inteligencia artificial, como los modelos de lenguaje grandes (LLMs), intercambian contexto, instrucciones y resultados. MCP facilita la interoperabilidad entre diferentes modelos, agentes y aplicaciones, permitiendo una integración más sencilla y flexible en sistemas de IA.
 
-### ¿Para qué sirve MCP?
+### 2. ¿Para qué sirve MCP?
 - Permite que diferentes modelos y agentes de IA se comuniquen usando un formato común.
 - Facilita la integración de LLMs en aplicaciones, flujos de trabajo y sistemas distribuidos.
 - Estandariza el intercambio de contexto, instrucciones y resultados entre componentes de IA.
