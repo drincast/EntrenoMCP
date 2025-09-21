@@ -1,4 +1,4 @@
-# Comandos básicos de Python venv y pip
+# 1. Comandos básicos de Python venv y pip
 
 Este archivo contiene los comandos más usados para trabajar con ambientes virtuales en Python usando `venv` y la gestión de paquetes con `pip`. Puedes agregar más comandos y secciones según tus necesidades.
 
@@ -78,7 +78,31 @@ pip install -r requirements.txt
 
 ---
 
-## 8. Uso de archivos `.env` en proyectos Python
+## 8. Eliminar un entorno virtual creado con venv
+
+Para eliminar un entorno virtual, simplemente borra la carpeta donde fue creado.
+
+**Comando (Windows, Linux o Mac):**
+```bash
+rm -rf nombre_del_entorno
+```
+O en Windows (cmd):
+```cmd
+rmdir /s /q nombre_del_entorno
+```
+
+**Descripción:** Elimina completamente el entorno virtual y todos sus archivos.
+
+**¿Para qué sirve?** Para limpiar espacio o eliminar entornos que ya no necesitas.
+
+---
+---
+
+<br>
+<br>
+
+
+# 2. Uso de archivos `.env` en proyectos Python
 
 Los archivos `.env` permiten guardar variables de entorno sensibles (como contraseñas, claves API, configuraciones) fuera del código fuente.
 
@@ -183,6 +207,10 @@ mcp dev server.py
 - Consulta la documentación oficial de MCP: https://github.com/modelcontext/modelcontext
 - Usa variables de entorno para configurar endpoints y claves API.
 - MCP puede usarse con modelos locales o servicios en la nube compatibles.
+
+---
+
+
 
 ---
 
